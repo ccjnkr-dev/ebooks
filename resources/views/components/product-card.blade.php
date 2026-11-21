@@ -1,0 +1,3 @@
+
+@props(['product'])
+<article class="product-card"><a class="product-image-link" href="{{ route('product',$product->slug) }}" aria-label="View {{ $product->title }}"><x-product-art :product="$product"/></a><div class="card-meta"><span>{{ $product->category?->name ?? ucfirst($product->type) }}</span><span>{{ $product->ready?($product->type==='painting'?'Watermarked sample':'Preview available'):'Sample listing' }}</span></div><div class="card-title-row"><h3><a href="{{ route('product',$product->slug) }}">{{ $product->title }}</a></h3><span class="price">{{ $product->price_label }}</span></div><p class="creator">{{ $product->creator }}</p></article>
